@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {   
+  font-family: "Poppins";   
+  src: url(../Poppins/Poppins-Medium.ttf) 
+  format('truetype'); 
+}
+
+body{
+  @apply font-poppins;
+}
+
+* {
+    @apply transition-all;
+}
+
+.fullscreen-center {
+  @apply h-screen w-screen flex items-center justify-center bg-white;
+}
+
+.circle-button {
+  @apply cursor-pointer shadow-2xl rounded-full flex items-center justify-center w-96 h-96 text-5xl bg-csus text-white hover:bg-white hover:text-csus;
+}
