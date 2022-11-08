@@ -18,7 +18,7 @@ const logs = ref({});
 
 onMounted(() => {
   console.log("adding");
-  axios.get("https://helpdesk-backend-mfof7ifs0-tvut.vercel.app/sessions").then(
+  axios.get("https://helpdesk-backend-six.vercel.app/sessions").then(
     (response) => {
       console.log(response.data);
       logs.value = response.data;
