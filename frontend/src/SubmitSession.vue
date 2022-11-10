@@ -68,7 +68,7 @@ const addSession = () => {
   console.log("adding");
   submitStatus.value = 1;
   axios
-    .post("https://helpdesk-backend-six.vercel.app/addRecord", {
+    .post(process.env.VUE_APP_BACKEND_URL+"addRecord", {
       tutor: tutorName.value,
     })
     .then(

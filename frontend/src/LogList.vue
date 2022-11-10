@@ -17,8 +17,9 @@ import { ref, onMounted } from "vue";
 const logs = ref({});
 
 onMounted(() => {
+  console.log(process.env.VUE_APP_BACKEND_URL)
   console.log("adding");
-  axios.get("https://helpdesk-backend-six.vercel.app/sessions").then(
+  axios.get(process.env.VUE_APP_BACKEND_URL+"sessions").then(
     (response) => {
       console.log(response.data);
       logs.value = response.data;
