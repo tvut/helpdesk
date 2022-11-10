@@ -48,7 +48,7 @@ recordRoutes.route('/addRecord').post(function (req, res) {
         res.status(400).send('Error inserting matches!');
       } else {
         console.log(`Added a new tutor session with id ${result.insertedId}`);
-        res.status(204).send(result.insertedId);
+        res.status(200).send(result.insertedId);
       }
     });
 });

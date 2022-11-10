@@ -16,8 +16,16 @@
         <div v-else-if="submitStatus == 1">
           <p class="circle-button">Loading...</p>
         </div>
-        <div v-else>
+        <div v-else-if="submitStatus == 2">
           <p class="circle-button !bg-green-500">Submitted!</p>
+        </div>
+        <div v-else>
+          <p
+            class="circle-button !text-white !text-4xl !bg-red-500 pointer-events-auto"
+            v-on:click="addSession()"
+          >
+            Error. Try again!
+          </p>
         </div>
       </div>
     </div>
@@ -81,8 +89,11 @@ const addSession = () => {
         }, 5000);
       },
       (error) => {
-        submitStatus.value = 0;
+        submitStatus.value = 3;
         console.log(error);
+        setTimeout(function () {
+          submitStatus.value = 0;
+        }, 5000);
       }
     );
 };
